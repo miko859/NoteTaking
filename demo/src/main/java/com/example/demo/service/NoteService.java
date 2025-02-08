@@ -1,0 +1,36 @@
+package com.example.demo.service;
+
+import com.example.demo.entity.Notes;
+import com.example.demo.entity.Notes;
+import com.example.demo.repository.NoteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class NoteService {
+    @Autowired
+    private NoteRepository noteRepository;
+
+    public List<Notes> getAllNotes() {
+        return noteRepository.findAll();
+    }
+
+    public Notes createNote(Notes note) {
+        return noteRepository.save(note);
+    }
+
+    public Notes updateNote(Long id, Notes note) {
+        Notes existingNote = noteRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Note not found"));
+        existingNote.setTitle(note.getTitle());
+        existingNote.setContent(note.getContent());
+        return noteRepository.save(existingNote);
+    }
+
+    public void deleteNote(Long id) {
+        noteRepository.deleteById(id);
+    }
+}
