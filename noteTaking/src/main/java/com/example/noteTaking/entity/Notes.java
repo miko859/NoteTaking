@@ -1,5 +1,6 @@
 package com.example.noteTaking.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import java.util.Set;
 
@@ -13,7 +14,9 @@ public class Notes {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonBackReference
     private User user;
+
 
     @ManyToMany
     @JoinTable(
