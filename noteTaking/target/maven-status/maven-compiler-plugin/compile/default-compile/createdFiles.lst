@@ -1,0 +1,14 @@
+com\example\noteTaking\controller\TagController.class
+com\example\noteTaking\controller\UserController.class
+com\example\noteTaking\repository\NoteRepository.class
+com\example\noteTaking\service\UserService.class
+com\example\noteTaking\config\SecurityConfig.class
+com\example\noteTaking\entity\Tag.class
+com\example\noteTaking\entity\Notes.class
+com\example\noteTaking\service\NoteService.class
+com\example\noteTaking\controller\NoteController.class
+com\example\noteTaking\NoteTakingApplication.class
+com\example\noteTaking\repository\TagRepository.class
+com\example\noteTaking\service\TagService.class
+com\example\noteTaking\entity\User.class
+com\example\noteTaking\repository\UserRepository.class
