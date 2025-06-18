@@ -21,7 +21,7 @@ public class NoteService {
         return noteRepository.save(note);
     }
 
-    public Notes updateNotes(Long id, Notes note) { // Changed method name to updateNotes
+    public Notes updateNotes(Long id, Notes note) {
         Notes existingNote = noteRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Notes not found"));
         existingNote.setTitle(note.getTitle());
